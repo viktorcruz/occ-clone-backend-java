@@ -1,23 +1,45 @@
-package com.lastsys.hexagonal.occ_clone.domain.models;
+package com.lastsys.hexagonal.occ_clone.infraestructure.entities;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.lastsys.hexagonal.occ_clone.domain.models.User;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 import java.time.LocalDateTime;
 
-public class User {
+@Entity
+public class UserEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
     private Long userTypeId;
-    @JsonFormat(shape =JsonFormat.Shape.STRING, pattern =  "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime creationDate;
 
-    public User(Long id, String name, String email, Long userTypeId, LocalDateTime creationDate) {
+    public UserEntity(){}
+
+    public UserEntity(Long id, String name, String email, Long userTypeId, LocalDateTime creationDate) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.userTypeId = userTypeId;
         this.creationDate = creationDate;
+    }
+
+    public static UserEntity fromDomainModel(User user){
+        return new UserEntity(
+                user.getId(),
+                user.getName(),
+                user.getEmail(),
+                user.getUserTypeId(),
+                user.getCreationDate()
+        );
+    }
+
+    public User toDomainModel(){
+        return new User(id, name, email, userTypeId, creationDate);
     }
 
     public Long getId() {
@@ -44,11 +66,11 @@ public class User {
         this.email = email;
     }
 
-    public Long getUserTypeId() {
+    public Long getUserType() {
         return userTypeId;
     }
 
-    public void setUserTypeId(Long userTypeId) {
+    public void setUserType(Long userTypeId) {
         this.userTypeId = userTypeId;
     }
 

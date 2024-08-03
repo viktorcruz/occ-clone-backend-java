@@ -29,26 +29,26 @@ public class UserService implements CreateUserUseCase, DeleteUserCaseUse, Retrie
 
     @Override
     public User createUser(User user) {
-        return null;
+        return createUserUseCase.createUser(user);
     }
 
     @Override
     public boolean deleteUser(Long id) {
-        return false;
+        return deleteUserCaseUse.deleteUser(id);
     }
 
     @Override
     public Optional<User> getUser(Long id) {
-        return Optional.empty();
+        return retrieveUserUseCase.getUser(id);
     }
 
     @Override
     public List<User> getAllUsers() {
-        return null;
+        return retrieveUserUseCase.getAllUsers();
     }
 
     @Override
     public Optional<User> updateUser(Long id, User updatedUser) {
-        return Optional.empty();
+        return updateUserUseCase.updateUser(id, updatedUser);
     }
 }

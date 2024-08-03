@@ -14,6 +14,6 @@ public class CreateUserUseCaseImp implements CreateUserUseCase {
 
     @Override
     public User createUser(User user) {
-        return null;
+        return userRepositoryPort.save(user);
     }
 }

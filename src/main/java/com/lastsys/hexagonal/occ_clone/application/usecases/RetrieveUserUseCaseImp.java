@@ -16,11 +16,11 @@ public class RetrieveUserUseCaseImp implements RetrieveUserUseCase {
 
     @Override
     public Optional<User> getUser(Long id) {
-        return Optional.empty();
+        return userRepositoryPort.findById(id);
     }
 
     @Override
     public List<User> getAllUsers() {
-        return null;
+        return userRepositoryPort.findAll();
     }
 }

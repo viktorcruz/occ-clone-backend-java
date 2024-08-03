@@ -16,6 +16,6 @@ public class UpdateUserUseCaseImp implements UpdateUserUseCase {
 
     @Override
     public Optional<User> updateUser(Long id, User updatedUser) {
-        return Optional.empty();
+        return userRepositoryPort.update(updatedUser);
     }
 }
