@@ -5,10 +5,12 @@ import com.lastsys.hexagonal.occ_clone.domain.ports.in.user.CreateUserUseCase;
 import com.lastsys.hexagonal.occ_clone.domain.ports.in.user.DeleteUserCaseUse;
 import com.lastsys.hexagonal.occ_clone.domain.ports.in.user.RetrieveUserUseCase;
 import com.lastsys.hexagonal.occ_clone.domain.ports.in.user.UpdateUserUseCase;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class UserService implements CreateUserUseCase, DeleteUserCaseUse, RetrieveUserUseCase, UpdateUserUseCase {
     private final CreateUserUseCase createUserUseCase;
     private final DeleteUserCaseUse deleteUserCaseUse;

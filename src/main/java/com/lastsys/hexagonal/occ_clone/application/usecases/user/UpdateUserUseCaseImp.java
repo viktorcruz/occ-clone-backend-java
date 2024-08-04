@@ -1,4 +1,4 @@
-package com.lastsys.hexagonal.occ_clone.application.usecases;
+package com.lastsys.hexagonal.occ_clone.application.usecases.user;
 
 import com.lastsys.hexagonal.occ_clone.domain.models.User;
 import com.lastsys.hexagonal.occ_clone.domain.ports.in.user.UpdateUserUseCase;

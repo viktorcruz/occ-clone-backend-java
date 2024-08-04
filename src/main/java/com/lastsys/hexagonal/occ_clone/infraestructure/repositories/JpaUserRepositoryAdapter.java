@@ -42,8 +42,8 @@ public class JpaUserRepositoryAdapter implements UserRepositoryPort {
     public Optional<User> update(User user) {
         if(jpaUserRepository.existsById(user.getId())){
             UserEntity userEntity = UserEntity.fromDomainModel(user);
-            UserEntity updatedUserEntity = jpaUserRepository.save(userEntity);
-            return Optional.of(updatedUserEntity.toDomainModel());
+            UserEntity updateUserEntity = jpaUserRepository.save(userEntity);
+            return Optional.of(updateUserEntity.toDomainModel());
         }
         return Optional.empty();
     }
