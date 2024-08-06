@@ -1,8 +1,6 @@
 package com.lastsys.hexagonal.occ_clone.domain.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.lastsys.hexagonal.occ_clone.infraestructure.entities.RoleEntity;
-import com.lastsys.hexagonal.occ_clone.infraestructure.entities.UserEntity;
 
 import java.time.LocalDateTime;
 

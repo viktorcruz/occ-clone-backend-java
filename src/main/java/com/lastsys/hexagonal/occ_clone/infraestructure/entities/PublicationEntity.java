@@ -28,7 +28,6 @@ public class PublicationEntity {
     private boolean status;
     private LocalDateTime expirationDate;
 
-    public PublicationEntity(){}
     public PublicationEntity(Long id, UserEntity recruiter, String title, String description, LocalDateTime publicationDate, RoleEntity role, boolean status, LocalDateTime expirationDate){
         this.id = id;
         this.recruiter = recruiter;
